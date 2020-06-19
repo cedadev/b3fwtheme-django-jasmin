@@ -11,7 +11,7 @@ try:
 except ImportError:
     # If we get an import error, find the version string manually
     version = "unknown"
-    with open(os.path.join(here, 'fwtheme_django', '__init__.py')) as f:
+    with open(os.path.join(here, 'fwtheme_django_jasmin', '__init__.py')) as f:
         for line in f:
             match = re.search('__version__ *= *[\'"](?P<version>.+)[\'"]', line)
             if match:
@@ -24,7 +24,7 @@ with open(os.path.join(here, 'README.md')) as f:
 if __name__ == "__main__":
 
     setup(
-        name = 'fwtheme-django-jasmin',
+        name = 'b3fwtheme-django-jasmin',
         version = version,
         description = 'Framework-level theme for Django app using bootstrap 3, JAMSIN branding',
         long_description = README,

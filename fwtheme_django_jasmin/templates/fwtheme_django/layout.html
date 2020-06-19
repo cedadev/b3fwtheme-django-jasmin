@@ -1,15 +1,5 @@
-{% load static cookielaw_tags i18n fwtheme_tags %}
-{% is_container_fluid as container_fluid %}
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{% block head_title %}{% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    {% block blog_feeds %}
-    {% endblock %}
+{% extends "fwtheme_django/layout.html" %}
+{% load static %}
     
     {% block stylesheets %}
     <!-- Bootstrap Core
@@ -34,33 +24,8 @@
 
     {% endblock stylesheets %}
 
-    {% block head_js %}
-      <script src="{% static "cookielaw/js/cookielaw.js" %}"></script>
-    {% endblock head_js %}
-
-    {% block head_js_extra %}{% endblock head_js_extra %}
-
-  </head>
-  <body id="{% block body_id %}body{% endblock body_id %}">
-  
-  {% block cookielaw_banner %}
-      {% if 'cookielaw_accepted' not in request.COOKIES %}
-            <div class="alert alert-info text-center" id="CookielawBanner">
-            This website uses cookies.
-            By continuing to use this website you are agreeing to our use of cookies.&nbsp;
-                <div class="btn-group">
-                    <button type="button" class="btn btn-secondary"
-                            onclick="javascript:Cookielaw.createCookielawCookie();">OK</a>
-
-                    <button type="button" class="btn btn-secondary"
-                            onclick="javascript:window.open('http://www.ceda.ac.uk/privacy-and-cookies/')">Find out more</button>
-                </div>
-            </div>
-      {% endif %}
-  {% endblock %}
-
   {% block navbar_main %}
-    <div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar navbar-default navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
               {% block navbar_branding %}
@@ -181,12 +146,3 @@
         </div>
       </footer>
       {% endblock footer %}
-
-
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="https://artefacts.ceda.ac.uk/themes/b3orgtheme_jasmin/0.1/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="https://artefacts.ceda.ac.uk/themes/b3orgtheme_jasmin/0.1/_assets/js/custom.js"></script>
-    
-    {% block tail_js_extra %}{% endblock tail_js_extra %}
-  </body>
-</html>
