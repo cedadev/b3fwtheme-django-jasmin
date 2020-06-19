@@ -36,7 +36,7 @@ if __name__ == "__main__":
         ],
         author = 'Matt Pritchard',
         author_email = 'matt.pritchard@stfc.ac.uk',
-        url = 'https://github.com/cedadev/fwtheme-django-jasmin',
+        url = 'https://github.com/cedadev/b3fwtheme-django-jasmin',
         keywords = 'web django theme bootstrap',
         packages = find_packages(),
         include_package_data = True,
